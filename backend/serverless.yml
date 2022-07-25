@@ -24,7 +24,7 @@ provider:
   environment:
     TODOS_TABLE: Todos-${self:provider.stage}
     TODOS_CREATED_AT_INDEX: CreatedAtIndex
-    ATTACHMENT_S3_BUCKET: ruchi-s33-s3-${self:provider.stage}
+    ATTACHMENT_S3_BUCKET: servlessappdbwaiudgaw3187231bdahd-${self:provider.stage}
     SIGNED_URL_EXPIRATION: 300
 
   logs:
@@ -46,7 +46,7 @@ functions:
           path: todos
           cors: true
           authorizer: Auth
-    iamRoleStatements: # here   
+    iamRoleStatements: 
       - Effect: Allow
         Action:
             - xray:PutTelemetryRecords
@@ -69,7 +69,7 @@ functions:
           path: todos
           cors: true
           authorizer: Auth
-    iamRoleStatements: # here   
+    iamRoleStatements:   
       - Effect: Allow
         Action:
             - xray:PutTelemetryRecords
@@ -90,7 +90,7 @@ functions:
           method: patch
           path: todos/{todoId}
           cors: true
-    iamRoleStatements: # here   
+    iamRoleStatements:   
     - Effect: Allow
       Action:
             - xray:PutTelemetryRecords
@@ -112,7 +112,7 @@ functions:
           method: delete
           path: todos/{todoId}
           cors: true
-    iamRoleStatements: # here   
+    iamRoleStatements:   
       - Effect: Allow
         Action:
             - xray:PutTelemetryRecords
@@ -134,7 +134,7 @@ functions:
           method: post
           path: todos/{todoId}/attachment
           cors: true
-    iamRoleStatements: # here   
+    iamRoleStatements:  
       - Effect: Allow
         Action:
             - xray:PutTelemetryRecords
